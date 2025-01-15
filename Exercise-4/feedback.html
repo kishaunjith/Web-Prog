@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Feedback</title>
+</head>
+<body>
+    <h1>Product Feedback</h1>
+    <form>
+        <!-- Slider 1 -->
+        <label for="slider1">Design (0 to 10): 
+            <output name="output1" for="slider1">5</output>
+        </label>
+        <input type="range" id="slider1" name="design" min="0" max="10" value="5" oninput="result.value=parseInt(slider1.value)+parseInt(slider2.value)+parseInt(slider3.value)">
+        <br><br>
+
+        <!-- Slider 2 -->
+        <label for="slider2">Usability (0 to 10): 
+            <output name="output2" for="slider2">5</output>
+        </label>
+        <input type="range" id="slider2" name="usability" min="0" max="10" value="5" oninput="result.value=parseInt(slider1.value)+parseInt(slider2.value)+parseInt(slider3.value)">
+        <br><br>
+
+        <!-- Slider 3 -->
+        <label for="slider3">Performance (0 to 10): 
+            <output name="output3" for="slider3">5</output>
+        </label>
+        <input type="range" id="slider3" name="performance" min="0" max="10" value="5" oninput="result.value=parseInt(slider1.value)+parseInt(slider2.value)+parseInt(slider3.value)">
+        <br><br>
+
+        <!-- Total -->
+        <label>Total Feedback Value: 
+            <output name="result" id="result">15</output>
+        </label>
+    </form>
+</body>
+</html>
