@@ -1,0 +1,55 @@
+<main style="padding: 20px;">
+    <section id="media">
+        <h2>Media and Graphics</h2>
+        
+        <!-- Audio Element -->
+        <h3>Audio</h3>
+        <audio controls>
+            <source src="sample.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Video Element -->
+        <h3>Video</h3>
+        <video controls width="320" height="240">
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- SVG Using Iframe -->
+        <h3>SVG Graphic</h3>
+        <iframe src="graphic.svg" width="400" height="300" style="border: none;">
+            Your browser does not support inline frames.
+        </iframe>
+
+        <h3>Canvas</h3>
+        <!-- Canvas Element -->
+        <canvas id="myCanvas" width="400" height="300" style="border:1px solid #000;"></canvas>
+        
+        <script>
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Draw the laptop body (bottom part)
+            ctx.fillStyle = '#808080'; 
+            ctx.fillRect(50, 150, 300, 50); 
+
+            // Draw the screen (top part)
+            ctx.fillStyle = '#0000ff'; 
+            ctx.fillRect(50, 50, 300, 100); 
+
+            // Draw the screen border (outline)
+            ctx.strokeStyle = '#000000'; 
+            ctx.lineWidth = 2;
+            ctx.strokeRect(50, 50, 300, 100); 
+
+            ctx.fillStyle = '#ffffff'; 
+            ctx.fillRect(70, 160, 260, 30); 
+
+            // Draw the laptop touchpad
+            ctx.fillStyle = '#333333'; 
+            ctx.fillRect(160, 190, 80, 20); 
+        </script>
+
+    </section>
+</main>
