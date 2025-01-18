@@ -1,0 +1,80 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #999;
+}
+
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.rainbow-heading {
+    font-size: 3em;
+    font-weight: bold;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
+}
+
+.content {
+    margin: 50px;
+}
+
+.description {
+    margin-bottom: 30px;
+    column-count: 2;
+    column-gap: 40px;
+    line-height: 30pt;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.ball-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#ball {
+    animation: dogPlayingWithBall 4s infinite;
+}
+
+@keyframes dogPlayingWithBall {
+    0% {
+        transform: translate(0, 0) rotate(0deg) skew(0deg);
+    }
+    25% {
+        transform: translate(150px, -100px) rotate(45deg) skew(10deg);
+    }
+    50% {
+        transform: translate(300px, 0) rotate(90deg) skew(20deg);
+    }
+    75% {
+        transform: translate(150px, 100px) rotate(135deg) skew(10deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(180deg) skew(0deg);
+    }
+}
