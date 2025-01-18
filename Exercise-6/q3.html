@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Singer</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;  
+            align-items: center;     
+            height: 100vh;           
+            margin: 0;                
+            text-align: center;
+        }
+
+        .myphto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; 
+            border: 2px solid #FF5733; 
+            transition: all 0.5s ease-in-out;
+        }
+
+        .myphto:hover {
+            filter: brightness(1.2);
+        }
+
+        .image-title {
+            font-size: 20px;
+            color: #333;
+            animation: fontChangeColor 3s infinite;
+        }
+
+        @keyframes fontChangeColor {
+            0% {
+                color: #f5ff40; 
+                font-size: 16px;
+            }
+            50% {
+                color: magenta; 
+                font-size: 20px;
+            }
+            100% {
+                color: purple; 
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="image-title">My Favorite Singer</h1>
+        <img src="images.jpg" alt="Favorite Singer" class="myphto">
+    </div>
+</body>
+</html>
