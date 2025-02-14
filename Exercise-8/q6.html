@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Total Cost</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form name="main">
+        <label for="t1">Adults (₹10.00 each):</label><br>
+        <input type="number" id="t1"><br><br>
+        
+        <label for="t2">Children (₹5.00 each):</label><br>
+        <input type="number" id="t2"><br><br>
+        
+        <input type="button" name="button" value="Total" onclick="calc()">&nbsp;&nbsp;&nbsp;
+        <input type="text" id="t3" readonly="readonly" value="ans">
+    </form>
+</body>
+</html>

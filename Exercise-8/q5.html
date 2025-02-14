@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Registration Number</title>
+</head>
+<body>
+
+    <h1>Enter Your Registration Information</h1>
+
+    <div id="nameContainer"></div>
+
+    <script>
+        let regNo = prompt("Enter your registration number:");
+        let name = prompt("Enter your name:");
+
+        document.write("<div style='border: 10px solid red; background-color: gray; padding: 10px; width: fit-content;'>");
+        document.write("<p style='font-size: 18px; color: white;'>Registration Number: " + regNo + "</p>");
+        document.write("</div><br><br>");
+
+        document.getElementById("nameContainer").innerHTML = `
+            <div style='border: 1px solid; width: fit-content;'>
+                <p style='font-size: 36px; font-weight: bold; color: red;'>*${name}*</p>
+            </div>
+        `;
+    </script>
+
+</body>
+</html>
