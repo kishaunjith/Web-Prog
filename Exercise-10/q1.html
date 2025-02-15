@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1857</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+    <script>
+        const arr = [];
+        const age = [];
+
+        function inp() {
+            for (let i = 0; i < 3; i++) {
+                let name = prompt("Enter patient name:");
+                if (!name) {
+                    alert("Invalid input. Please enter a valid name.");
+                    i--; 
+                    continue; 
+                }
+                arr[i] = name;
+
+                let ageInput = prompt("Enter patient's age:");
+                let patientAge = parseInt(ageInput);
+
+                if (isNaN(patientAge) || patientAge <= 0) {
+                    alert("Invalid age. Please enter a valid number.");
+                    i--; 
+                    continue;
+                }
+                age[i] = patientAge;
+            }
+        }
+
+        function sort() {
+            for (let i = 0; i < 8; i++) {
+                for (let j = i + 1; j < 8; j++) {
+                    if (age[i] < age[j]) {
+                        let temp = age[j];
+                        age[j] = age[i];
+                        age[i] = temp;
+                        let temp1 = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = temp1;
+                    }
+                }
+            }
+            let table = document.getElementById("table1");
+            table.innerHTML = "<tr><th>P.Id</th><th>Name</th><th>Age</th></tr>";
+            for (let i = 0; i < 8; i++) {
+                table.innerHTML += `<tr><td>${i + 1}</td><td> ${arr[i]} </td><td>${age[i]}</td></tr>`;
+            }
+        }
+
+        function search() {
+            let ser = prompt("Enter P.Id to be found:");
+            let pid = parseInt(ser);
+            if (!isNaN(pid) && pid > 0 && pid <= 8) {
+                alert("The entered P.Id is present");
+                alert(`Patient's name: ${arr[pid - 1]}\nPatient's age: ${age[pid - 1]}`);
+            } else {
+                alert("Invalid P.Id. Please enter a number between 1 and 8.");
+            }
+        }
+
+        function filter() {
+            let x1 = parseInt(prompt("Enter starting age range: "));
+            let x2 = parseInt(prompt("Enter ending age range: "));
+            
+            if (isNaN(x1) || isNaN(x2) || x1 > x2) {
+                alert("Invalid range. Please enter valid numbers with the starting range less than the ending range.");
+                return;
+            }
+            
+            let s1 = document.getElementById("p1");
+            s1.innerHTML = `<h2>Filtered Patients</h2>`;
+            
+            let table = document.getElementById("table2");
+            table.innerHTML = "<tr><th>Name</th><th>Age</th></tr>";
+            
+            for (let i = 0; i < 8; i++) {
+                if (age[i] >= x1 && age[i] <= x2) {
+                    table.innerHTML += `<tr><td>${arr[i]}</td><td>${age[i]}</td></tr>`;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Sri Venkateswara Hospital</h1>
+    <button onclick="inp()">Enter Patient Data</button>
+    <button onclick="sort()">Sort by Age (Descending)</button>
+    <button onclick="search()">Search Patient</button>
+    <button onclick="filter()">Filter by Age</button>
+    
+    <table id="table1">
+        <tr>
+            <th>P.Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+   
+    <p id="p1"></p>
+    <table id="table2"></table>
+    
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Order Form</title>
+    <style>
+        body {
+            background-color: rgba(86, 88, 44, 0.904);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        input {
+            border-radius: 20px;
+            padding: 5px;
+        }
+        table {
+            margin: auto;
+            border-spacing: 15px;
+        }
+        img {
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+        }
+        button {
+            width: 200px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: rgb(245, 162, 54);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: rgb(200, 130, 40);
+        }
+    </style>
+</head>
+<body>
+    <h1>Grocery Order Form</h1>
+    <form action="q3receipt.html" id="form1" method="get">
+        <label for="name1"><b>First Name:</b></label>
+        <input type="text" id="name1" name="name1">
+        
+        <label for="name2"><b>Last Name:</b></label>
+        <input type="text" id="name2" name="name2">
+        
+        <br><br>
+        
+        <label for="number1"><b>Phone Number:</b></label><br>
+        <input type="tel" id="number1" name="number1" pattern="[0-9]{10}" required>
+        
+        <br><br>
+
+        <label for="mail1"><b>E-mail:</b></label><br>
+        <input type="email" id="mail1" name="mail1" required>
+
+        <hr>
+        
+        <h3>Products</h3>
+        <table>
+            <tr>
+                <td><img src="image1.png" alt="Fresh Red Apple"></td>
+                <td><input type="checkbox" name="product" value="apple"></td>
+                <td><label for="apple">Apple</label></td>
+                <td>$10</td>
+                <td><input type="number" name="appleQty" min="0"> kg</td>
+            </tr>
+            <tr>
+                <td><img src="image2.png" alt="Yellow Bananas"></td>
+                <td><input type="checkbox" name="product" value="banana"></td>
+                <td><label for="banana">Banana</label></td>
+                <td>$5</td>
+                <td><input type="number" name="bananaQty" min="0"> kg</td>
+            </tr>
+            <tr>
+                <td><img src="image3.png" alt="Fresh Avocado"></td>
+                <td><input type="checkbox" name="product" value="avocado"></td>
+                <td><label for="avocado">Avocado</label></td>
+                <td>$7</td>
+                <td><input type="number" name="avocadoQty" min="0"> kg</td>
+            </tr>
+        </table>
+
+        <br>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>
