@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation and Current Time</title>
+    <style>
+        label { font-weight: bold; }
+        .error { color: red; }
+        .form-container { width: 50%; margin: 20px auto; }
+        input, textarea, select { width: 100%; padding: 8px; margin: 10px 0; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>User Form</h2>
+    <form id="userForm">
+        <label for="name">Name*:</label>
+        <input type="text" id="name" name="name" required>
+        <span id="nameError" class="error"></span>
+
+        <label for="address">Address*:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+        <span id="addressError" class="error"></span>
+
+        <label for="zip">Zip Code*:</label>
+        <input type="text" id="zip" name="zip" required>
+        <span id="zipError" class="error"></span>
+
+        <label for="phone">Phone Number*:</label>
+        <input type="text" id="phone" name="phone" required>
+        <span id="phoneError" class="error"></span>
+
+        <label for="email">Email*:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error"></span>
+
+        <label for="password">Password*:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="passwordError" class="error"></span>
+
+        <label for="pan">PAN Card Number*:</label>
+        <input type="text" id="pan" name="pan" required>
+        <span id="panError" class="error"></span>
+
+        <label>Gender*:</label>
+        <input type="radio" id="male" name="gender" value="Male" required> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+        <span id="genderError" class="error"></span>
+
+        <label for="country">Country*:</label>
+        <select id="country" name="country" required>
+            <option value="">Select Country</option>
+            <option value="USA">USA</option>
+            <option value="India">India</option>
+            <option value="UK">UK</option>
+        </select>
+        <span id="countryError" class="error"></span>
+
+        <label>Preferences*:</label>
+        <input type="checkbox" id="preference1" name="preferences" value="Option1"> Option 1
+        <input type="checkbox" id="preference2" name="preferences" value="Option2"> Option 2
+        <input type="checkbox" id="preference3" name="preferences" value="Option3"> Option 3
+        <span id="preferencesError" class="error"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Current Time: <span id="currentTime"></span></h3>
+    <h3>Form Content:</h3>
+    <pre id="formContent"></pre>
+</div>
+
+<script src="script3.js"></script>
+</body>
+</html>

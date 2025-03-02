@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Features</title>
+    <style>
+        #stopwatch {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #dob {
+            margin: 20px 0;
+        }
+        #charCount {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Simple Stopwatch</h2>
+    <div id="stopwatch">
+        <span id="timerDisplay">00:00:00</span>
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <button id="resetBtn">Reset</button>
+
+    <h2>Calculate Your Age</h2>
+    <input type="date" id="dob" placeholder="Enter your Date of Birth">
+    <p id="ageDisplay">Your Age: </p>
+
+    <h2>Textarea with Character Counter</h2>
+    <textarea id="textInput" rows="5" cols="40" placeholder="Type something..."></textarea>
+    <p id="charCount">Characters: 0</p>
+
+    <script src="script2.js"></script>
+
+</body>
+</html>

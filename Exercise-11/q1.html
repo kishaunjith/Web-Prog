@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table and Interactions</title>
+    <style>
+        table {
+            width: 50%;
+            border: 1px solid black;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: red;
+            cursor: pointer;
+        }
+        input {
+            padding: 8px;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dynamic Table</h2>
+
+    <table id="dynamicTable">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div>
+        <label>Button Hover Effect: </label>
+        <button id="hoverButton">Hover over me!</button>
+    </div>
+
+    <div>
+        <label>Textbox Focus Effect: </label>
+        <input type="text" id="focusTextbox" placeholder="Type here...">
+    </div>
+
+    <div>
+        <label>Add List Item: </label>
+        <input type="text" id="inputText">
+        <button id="addButton">Add to List</button>
+        <ul id="itemList"></ul>
+    </div>
+
+    <div>
+        <label>Key Press Counter: </label>
+        <input type="text" id="keyInput" placeholder="Type something...">
+        <p>Keys pressed: <span id="keyCount">0</span></p>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
