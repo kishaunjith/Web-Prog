@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Mafia Style</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg'); /* Dark moody background image */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    h3 {
+      text-align: center;
+      color: #f0db4f;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 40px;
+    }
+
+    /* Table Styling */
+    .dynamic-table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid #333;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .dynamic-table, .dynamic-table th, .dynamic-table td {
+      border: 1px solid #444;
+    }
+
+    .dynamic-table th, .dynamic-table td {
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+      background-color: #222;
+      color: #f0db4f;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .dynamic-table tr:nth-child(even) {
+      background-color: #333;
+    }
+
+    .dynamic-table tr:hover {
+      background-color: #444;
+    }
+
+    /* Editable cell highlight */
+    .editable {
+      background-color: #444;
+      color: #f0db4f;
+    }
+
+    .editable:hover {
+      background-color: #555;
+    }
+
+    /* Input fields and buttons for user input */
+    .input-boxes {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .input-boxes input, .input-boxes button {
+      padding: 12px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #444;
+      color: #f0db4f;
+      background-color: #333;
+    }
+
+    .input-boxes input {
+      width: 200px;
+    }
+
+    .input-boxes button {
+      background-color: #00695c;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+
+    .input-boxes button:hover {
+      background-color: #004d40;
+    }
+
+    /* Keypress Counter Styling */
+    #keypress-input {
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #444;
+      border-radius: 8px;
+      margin-right: 10px;
+      background-color: #333;
+      color: #f0db4f;
+    }
+
+    #keypress-count {
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #444;
+      border-radius: 8px;
+      width: 50px;
+      text-align: center;
+      margin-left: 10px;
+      background-color: #333;
+      color: #f0db4f;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h3>Japanese Mafia Style Editable Table</h3>
+
+  <!-- Dynamic Table -->
+  <div id="table-container"></div>
+
+  <!-- Input Boxes for Adding Data to Table -->
+  <div class="input-boxes">
+    <input type="text" id="row-input" placeholder="Row number">
+    <input type="text" id="col-input" placeholder="Column number">
+    <input type="text" id="data-input" placeholder="Enter Data">
+    <button id="update-btn">Update Table</button>
+  </div>
+
+  <!-- Keypress Counter -->
+  <input type="text" id="keypress-input" placeholder="Type something">
+  <input type="text" id="keypress-count" value="0" disabled><br><br>
+
+  <script>
+    // (i) Create a dynamic table with three rows and three columns
+    function createTable() {
+      const table = document.createElement('table');
+      table.classList.add('dynamic-table');
+      for (let i = 0; i < 3; i++) {
+        const row = document.createElement('tr');
+        for (let j = 0; j < 3; j++) {
+          const cell = document.createElement('td');
+          cell.textContent = `Row ${i + 1} - Col ${j + 1}`;
+          cell.addEventListener('click', makeEditable);
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+      document.getElementById('table-container').appendChild(table);
+    }
+
+    function makeEditable(e) {
+      const cell = e.target;
+      if (!cell.classList.contains('editable')) {
+        cell.contentEditable = true;
+        cell.classList.add('editable');
+      } else {
+        cell.contentEditable = false;
+        cell.classList.remove('editable');
+      }
+    }
+
+    createTable();
+
+    // (ii) Update specific table cell based on user input
+    const updateBtn = document.getElementById('update-btn');
+    updateBtn.addEventListener('click', updateTableCell);
+
+    function updateTableCell() {
+      const row = parseInt(document.getElementById('row-input').value) - 1;
+      const col = parseInt(document.getElementById('col-input').value) - 1;
+      const data = document.getElementById('data-input').value;
+      const table = document.querySelector('.dynamic-table');
+      
+      if (table) {
+        const targetCell = table.rows[row]?.cells[col];
+        if (targetCell && data) {
+          targetCell.textContent = data;
+        } else {
+          alert("Invalid input! Ensure the row and column numbers are valid.");
+        }
+      }
+    }
+
+    // (iii) Keypress Counter
+    const keypressInput = document.getElementById('keypress-input');
+    const keypressCount = document.getElementById('keypress-count');
+
+    keypressInput.addEventListener('keypress', () => {
+      keypressCount.value = parseInt(keypressCount.value) + 1;
+    });
+  </script>
+
+</body>
+</html>
